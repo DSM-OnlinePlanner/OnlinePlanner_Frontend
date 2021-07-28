@@ -1,0 +1,134 @@
+.signin-container{
+    height: 100%;
+    margin: 120px 100px 0;
+}
+.textfield{
+    margin-top: 12px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    border-bottom: solid 1px #585858;
+    width: 388px;
+    padding-bottom: 4px;
+}
+
+.textfield.checkfield{
+    width: 80%;
+}
+input:disabled:-webkit-autofill{
+    -webkit-box-shadow: 0 0 0 30px #D1D1D1 inset !important;
+    -webkit-text-fill-color: #9B9B9B;
+}
+input:-webkit-autofill{
+    -webkit-box-shadow: 0 0 0 30px #f0f0f0 inset !important;
+}
+.textfield:focus{
+    outline: none;
+}
+
+.textfield::placeholder{
+    color: #9B9B9B;
+}
+.textfield:disabled::placeholder{
+    color: #9B9B9B;
+}
+input.textfield:disabled, textarea.textfield:disabled, .disabled {
+    background: #D1D1D1;
+    color: #9B9B9B;
+}
+input.textfield:-webkit-autofill:disabled, 
+textarea.textfield:-webkit-autofill:disabled,
+input.textfield:-internal-autofill-selected {
+  background: #F0F0F0!important;
+  color: #2c2c2c!important;
+}
+
+.signin-container .signin-content{
+    margin-top: 24px;
+}
+
+#password-infomation-container{
+    position: absolute;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 16px;
+    z-index: 3;
+    transform: translate(-40%, -110%) ;
+    transition: all 0.25s ease-out;
+    opacity: 1;
+    visibility: visible;
+}
+#password-infomation-container.disabled{
+    transform: translate(-40%, -95%) ;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0);
+    visibility: hidden;
+    opacity: 0;
+}
+#questionMark{
+    margin-left: 8px;
+}
+
+.signin-container .signin-content.first-sign-content{
+    margin-top: 160px;
+}
+.signin-content{
+    position: relative;
+}
+.signin-container #password-find{
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.signin-container #infomation-wrong{
+    opacity: 0;
+}
+
+.login-button{
+    width: 100%;
+    height: 60px;
+    border: 0;
+    margin-top: 28px;
+    cursor: pointer;
+}
+.signin-container #sign-in-div{
+    margin: 16px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.login-button:hover{
+    background-color: #4B73FB;
+}
+
+.login-button:active{
+    background-color: #264CCC;
+}
+
+#all-error{
+    margin-top: 4px;
+}
+
+#back-to-login{
+    position: absolute;
+    top: -72px;
+}
+
+#back-to-login span{
+    margin-left: 8px;
+}
+
+.check-button{
+    background-color: #2F5DFB;
+    width: 20%;
+    margin-left: 12px;
+    border: 0;
+    cursor: pointer;
+}
+
+.check-button:active{
+    background-color: #264CCC;
+}
+
+.check-button:disabled{
+    background-color: #D1D1D1;
+    cursor: unset;
+}

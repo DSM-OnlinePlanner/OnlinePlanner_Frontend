@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+html{
+  background-color: #F0F0F0;
+}
+
+a{
+  color:unset;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

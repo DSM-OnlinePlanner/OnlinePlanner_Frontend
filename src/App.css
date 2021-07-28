@@ -1,0 +1,22 @@
+@import url(./css/basic.css);
+
+#header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+#sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+#container{
+  display: flex;
+}
+
+#sign-page{
+  display: flex;
+}

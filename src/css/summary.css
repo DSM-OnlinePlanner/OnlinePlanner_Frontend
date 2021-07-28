@@ -1,0 +1,118 @@
+#summary-container{
+    width: 1280px;
+    min-height: 3000px;
+    margin: 0 auto;
+}
+#title-container{
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#title-container span span{
+    margin-right: 16px;
+    align-self: flex-end;
+}
+
+#title-container #titie-day{
+    cursor: pointer;
+    align-self: flex-end;
+    user-select: none;
+}
+
+#title-container #title-title{
+    display: flex;
+}
+
+#summary-content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 72px;
+    grid-column-gap: 20px;
+    margin-top: 72px;
+}
+
+#summary-content #todo div:last-child{
+    margin-bottom: 0px;
+}
+
+#summary-content #todo #todo-outer{
+    padding: 16px;
+    margin-top: 10px;
+    height: 592px;
+    overflow: scroll;
+}
+
+#summary-content #todo #todo-outer #todo-header {
+    margin-bottom: 16px;
+}
+
+#summary-content #todo #todo-outer div #complete-todo{
+    margin: 16px 0px;
+}
+
+#summary-content #todo #todo-outer div span:last-child{
+    margin-left: 8px;
+}
+
+@media (max-width : 1400px) {
+    
+    #summary-content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 72px;
+        grid-column-gap: 20px;
+        margin-top: 72px;
+    }
+    #summary-container{
+        width: 1280px;
+        min-height: 3000px;
+        margin: 0 200px;
+    }
+}
+
+@media (max-width : 1200px) {
+    
+    #summary-content{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 72px;
+        grid-column-gap: 20px;
+        margin-top: 72px;
+    }
+    #summary-container{
+        width: 1280px;
+        min-height: 3000px;
+        margin: 0 200px;
+    }
+}
+#titie-day{
+    transition: all 0.25s ease-out;
+}
+#titie-day:hover{
+    background-color: #D1D1D1;
+}
+@media (max-width : 920px) {
+    
+    #title-container #title-title span:last-child{
+        visibility: hidden;
+        font-size: 0;
+    }
+    #summary-content{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 72px;
+        grid-column-gap: 20px;
+        margin-top: 72px;
+        min-width: 400px;
+    }
+    #summary-container{
+        width: 1280px;
+        min-height: 3000px;
+        margin: 0 100px;
+    }
+}
+
+#calender-container{
+    align-items: flex-end;
+}

@@ -1,0 +1,33 @@
+
+#sign-background{
+    background-image: url(../img/loginBackground.png);
+    width: 1332px;
+    height: 100vh;
+}
+#sign-background #background-container{
+    padding: 120px 100px;
+}
+#sign-background #background-container #logo-title{
+    display: flex;
+    align-content: center;
+}
+
+#sign-background #background-container #logo-title span{
+    margin-left: 12px;
+}
+
+#sign-background #background-container #content{
+    margin-top: 153px;
+}
+
+#sign-background #background-container #content div:first-child{
+    margin-bottom: 10px;
+}
+
+#sign-background #background-container #content ul{
+    margin-top: 6px;
+}
+
+#sign-background #background-container #content ul li{
+    transform: translateX(28px);
+}

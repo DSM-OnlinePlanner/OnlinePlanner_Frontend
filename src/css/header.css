@@ -1,0 +1,128 @@
+@import url(basic.css);
+
+#header{
+    height: 80px;
+    width: 100vw;
+    border-bottom: 1px solid #D1D1D1;
+}
+
+#header-container{
+    height: 100%;
+    width: 1728px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header-logo-svg{
+    width: 36px;
+    height: 36px;
+}
+
+#logo-title-container{
+    align-items: center;
+    display: flex;
+}
+
+#header-logo-title{
+    margin-left: 4px;
+}
+
+
+#profile-img{
+    width: 36px;
+    height: 36px;
+}
+
+#header-user-profile{
+    display: flex;
+    align-items: center;
+}
+
+#header-user-profile div #profile-name{
+    margin-left: 12px;
+    cursor: pointer;
+    user-select: none;
+
+}
+#header-user-profile div #profile-name img{
+    transition: 0.25s ease-out;
+    margin-right: 6px;
+}
+#header-user-profile div #profile-name .active{
+    transform: rotate(-180deg);
+}
+
+#header-user-profile div #profile-menu{
+    position: absolute;
+    margin-top: 14px;
+    transition: all 0.25s ease-out;
+}
+
+/* 프로필 메뉴가 활성화 되있을때 */
+#profile-menu.active{
+    visibility: visible;
+    transform: translate(-40%, 0%);
+    opacity: 1;
+    filter: blur(0px);
+}
+
+/* 프로필 메뉴가 활성화 되어있지 않을때 */
+#profile-menu.disactive{
+    visibility: hidden;
+    transform: translate(-40%, -15%);
+    opacity: 0;
+    filter: blur(5px);
+}
+
+#profile-menu ul {
+    list-style: none;
+    padding: 10px 0px;
+}
+
+#profile-menu ul li {
+    padding: 8px 12px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    transition: 0.25s ease-in-out;
+}
+
+#profile-menu ul li img{
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+    transition: 0.25s ease-in-out;
+}
+#profile-menu ul li a{
+    text-decoration: none;
+}
+
+/* 메뉴에 마우스를 올릴 때 */
+#profile-menu ul li:hover{
+    color: #2F5DFB;
+}
+#profile-menu ul li:hover > img{
+    filter: invert(25%) sepia(92%) saturate(2967%) hue-rotate(225deg) brightness(102%) contrast(97%);
+}
+
+/* 메뉴의 로그아웃에 마우스를 올릴 때 */
+#profile-menu ul #log-out:hover{
+    color: #FF4631;
+}
+#profile-menu ul #log-out:hover > img{
+    filter: invert(43%) sepia(100%) saturate(3552%) hue-rotate(342deg) brightness(100%) contrast(102%);
+}
+
+@media(max-width: 1770px){
+    #header-container{
+        height: 100%;
+        margin: 0 96px;
+        width: unset;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-width: 400px;
+    }
+}

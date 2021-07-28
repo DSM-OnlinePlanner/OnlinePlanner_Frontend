@@ -1,0 +1,79 @@
+
+/* ======================== background ========================= */
+.background-white       {   background-color: #FBFBFB;  }
+.background-gray1       {   background-color: #F0F0F0;  }
+.background-gray2       {   background-color: #D1D1D1;  }
+.background-gray3       {   background-color: #9B9B9B;  }
+.background-light-black {   background-color: #585858;  }
+.background-black       {   background-color: #2C2C2C;  }
+
+.background-red     {   background-color: #FF4631;  }
+.background-orange  {   background-color: #FF7F2E;  }
+.background-yellow  {   background-color: #FEBA2B;  }
+.background-green   {   background-color: #1BB778;  }
+.background-blue    {   background-color: #2F5DFB;  }
+
+/* ======================== color ========================= */
+.color-white        {   color: #FBFBFB!important; }
+.color-gray1        {   color: #F0F0F0; }
+.color-gray2        {   color: #D1D1D1; }
+.color-gray3        {   color: #9B9B9B; }
+.color-light-black  {   color: #585858; }
+.color-black        {   color: #2C2C2C; }
+
+.color-red     {   color: #FF4631;  }
+.color-orange  {   color: #FF7F2E;  }
+.color-yellow  {   color: #FEBA2B;  }
+.color-green   {   color: #1BB778;  }
+.color-blue    {   color: #2F5DFB;  }
+
+/* ======================== font ========================= */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+.font-noto-sans-kr  {   font-family: 'Noto Sans KR', sans-serif;    }
+
+.font-thin      {   font-weight: 100;   }
+.font-light     {   font-weight: 300;   }
+.font-regular   {   font-weight: 400;   }
+.font-medium    {   font-weight: 500;   }
+.font-bold      {   font-weight: 700;   }
+.font-black     {   font-weight: 900;   }
+
+.font-36px  {   font-size: 36px;    }
+.font-24px  {   font-size: 24px;    }
+.font-18px  {   font-size: 18px;    }
+.font-16px  {   font-size: 16px;    }
+.font-14px  {   font-size: 14px;    }
+
+.font-no-decoration {   text-decoration: none;}
+
+/* ======================== shadow ========================= */
+.shadow-default {   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);   }
+
+
+/* ======================== shadow ========================= */
+.border-radius-10px {   border-radius: 10px;    }
+
+
+/* ======================== fiter ========================= */
+.filter-white       {   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(115deg) brightness(107%) contrast(97%);    }
+.filter-gray1       {   filter: invert(97%) sepia(1%) saturate(1247%) hue-rotate(169deg) brightness(115%) contrast(88%);    }
+.filter-gray2       {   filter: invert(68%) sepia(95%) saturate(0%) hue-rotate(148deg) brightness(100%) contrast(101%);     }
+.filter-gray3       {   filter: invert(76%) sepia(0%) saturate(315%) hue-rotate(146deg) brightness(82%) contrast(88%);      }
+.filter-light-black {   filter: invert(33%) sepia(0%) saturate(0%) hue-rotate(247deg) brightness(96%) contrast(83%);        }
+.filter-black       {   filter: invert(11%) sepia(1%) saturate(0%) hue-rotate(104deg) brightness(97%) contrast(83%);        }
+
+.filter-red     {   filter: invert(43%) sepia(100%) saturate(3552%) hue-rotate(342deg) brightness(100%) contrast(102%); }
+.filter-orange  {   filter: invert(53%) sepia(86%) saturate(1129%) hue-rotate(339deg) brightness(103%) contrast(101%);  }
+.filter-yellow  {   filter: invert(79%) sepia(55%) saturate(836%) hue-rotate(334deg) brightness(101%) contrast(99%);    }
+.filter-green   {   filter: invert(43%) sepia(71%) saturate(1284%) hue-rotate(125deg) brightness(104%) contrast(79%);   }
+.filter-blue    {   filter: invert(25%) sepia(92%) saturate(2967%) hue-rotate(225deg) brightness(102%) contrast(97%);   }
+
+
+/* ======================== 속성 =========================  */
+.display-flex                   {   display: flex;                      }
+.align-items-center             {   align-items: center;                }
+.justify-content-center         {   justify-content: center;            }
+.justify-content-space-between  {   justify-content: space-between;    }
+
+
+.opacity-0  {   opacity: 0; }
