@@ -8,6 +8,11 @@ import apiController from '../js/ApiController.js';
 import {ClearToken} from '../js/Token.js'
 
 function SignIn(){
+    const ErrorType = {
+        EMAIL: 'error-email',
+        INFOMATION: 'error-information'
+    }
+
     //https://react.vlpt.us/basic/09-multiple-inputs.html 참고
     const history = useHistory();
     useEffect(() => {
@@ -15,6 +20,8 @@ function SignIn(){
     }, []);
 
     const [infomationMessaage, setInfomationMessaage] = useState('');
+    const [emailErrorMessage, setEmailErrorMessage] = useState('');
+
     const [inputs, setInputs] = useState({
         email: '',
         password: ''
@@ -29,12 +36,11 @@ function SignIn(){
     };
     const {email, password} = inputs;
 
-    const [emailErrorMessage, setEmailErrorMessage] = useState('');
 
     const setErrorMessage = (callback, message, id) => {
         callback(message);
-        document.querySelector(id).style = '';
-        gsap.from(id, {opacity:1, duration:10, ease:Power3.easeIn});
+        document.getElementById(id).style = '';
+        gsap.from('#' + id, {opacity:1, duration:10, ease:Power3.easeIn});
     }
 
     const onLogin = () => { //로그인 버튼 누를때 실행
@@ -44,13 +50,13 @@ function SignIn(){
         }
 
         if(data.email === '' || data.password === ''){
-            setErrorMessage(setInfomationMessaage, '빈칸을 채워주세요.', '#information-wrong');
+            setErrorMessage(setInfomationMessaage, '빈칸을 채워주세요.', ErrorType.INFOMATION);
             return;
         }
 
         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; //이메일 정규식
         if(!mailformat.test(data.email)){ //이메일이 유효하지 않음
-            setErrorMessage(setEmailErrorMessage, '유효하지 않은 이메일입니다.', '#emailError');
+            setErrorMessage(setEmailErrorMessage, '유효하지 않은 이메일입니다.', ErrorType.EMAIL);
             return;
         }
 
@@ -58,7 +64,7 @@ function SignIn(){
         axios.post('api/auth/nd', data)
              .then(onLoginSuccess)
              .catch(error => { //로그인 실패
-                 setErrorMessage(setInfomationMessaage, '정보를 다시 확인해 주세요.', '#information-wrong');
+                 setErrorMessage(setInfomationMessaage, '정보를 다시 확인해 주세요.', ErrorType.INFOMATION);
              })
             
     }
@@ -80,7 +86,7 @@ function SignIn(){
         <div className='signin-container '>
             <div className='font-36px font-bold use-animation color-black'>SIGN IN</div>
             <div className='signin-content first-sign-content use-animation'>
-                <div className='display-flex justify-content-space-between'><span className='textfield-title font-16px color-gray3 font-medium'>이메일</span><span id='emailError'className='font-16px color-red font-medium opacity-0'>{emailErrorMessage}</span></div>
+                <div className='display-flex justify-content-space-between'><span className='textfield-title font-16px color-gray3 font-medium'>이메일</span><span id={ErrorType.EMAIL}className='font-16px color-red font-medium opacity-0'>{emailErrorMessage}</span></div>
                 <input className="textfield font-24px color-black" name='email' placeholder='이메일을 입력해주세요' onChange={onChange} value={email}/>
             </div>
             <div className='signin-content use-animation'>
@@ -88,7 +94,7 @@ function SignIn(){
                 <input className="textfield font-24px color-black" name='password' type='password' placeholder='비밀번호를 입력해주세요' onChange={onChange} value={password}/>
             </div>
             <div id='password-find' className='use-animation'>
-                <span id='information-wrong' className="color-red font-16px font-medium opacity-0">{infomationMessaage}</span>
+                <span id={ErrorType.INFOMATION} className="color-red font-16px font-medium opacity-0">{infomationMessaage}</span>
                 <Link to='/login/password-find' className='font-no-decoration use-animation'><span className="font-16px color-blue font-medium">비밀번호</span><span className='font-16px font-medium color-gray3'>를 잊으셨나요?</span></Link>
             </div>
             <button className="border-radius-10px background-blue font-24px font-medium color-white login-button use-animation" onClick={onLogin}>

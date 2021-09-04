@@ -4,13 +4,14 @@ import Sidebar from './js/Sidebar.js';
 import { useState} from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Summary from './pages/Summary.js';
-import Todo from './pages/Todo.js';
-import Routine from './pages/Routine.js';
+import Todo from './pages/Todo/Todo.js';
+import Routine from './pages/Routine/Routine.js';
 import ComponentStateEnum from './js/componentState.js';
 import SignBackground from './pages/SignBackground.js';
 import SignIn from './pages/SignIn.js';
 import SignUp from './pages/SignUp.js';
 import FindPassword from './pages/FindPassword';
+import Recode from './pages/Recode/Recode';
 
 function App() {  
   const [componentState, setcomponentState] = useState(ComponentStateEnum.Summary); //보여주는 메누의 상태를 담당하는 변수
@@ -40,6 +41,7 @@ function App() {
                   <Route exact path='/' ><Summary setcomponentState={setcomponentState} /></Route>
                   <Route path='/todo' ><Todo setcomponentState={setcomponentState} /></Route>
                   <Route path='/routine' ><Routine setcomponentState={setcomponentState} /></Route>
+                  <Route path='/recode' ><Recode setcomponentState={setcomponentState} /></Route>
                 </Switch>
             </div>
           </Route>

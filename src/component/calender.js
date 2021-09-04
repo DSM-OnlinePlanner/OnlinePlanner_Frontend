@@ -1,7 +1,7 @@
 import './calender.css';
 import { useEffect, useState } from 'react';
-import leftChevron from '../../img/left-chevron.svg';
-import rightChevron from '../../img/right-chevron.svg'; 
+import leftChevron from '../img/left-chevron.svg';
+import rightChevron from '../img/right-chevron.svg'; 
 
 function Calender(props){
     const setNowdate = props.setNowDate;

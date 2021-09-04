@@ -10,7 +10,7 @@ import apiController from '../js/ApiController.js'
 import {useState, useRef} from 'react';
 import { useHistory } from 'react-router';
 import {ClearToken} from './Token.js'
-import {Planner, Time} from './classes/planner.js';
+import { Link } from 'react-router-dom';
 
 function Header() {
     const [userName, setUserName] = useState('loading');
@@ -18,6 +18,7 @@ function Header() {
     const userNameChevron = useRef(null);
     const history = useHistory();
     useEffect( () => {
+        
         apiController
             .get('api/user') //유저정보 불러오기
             .then( (response) => { //유저정보 불러오기 성공
@@ -57,16 +58,16 @@ function Header() {
     }
     return (
     //   헤더 div
-      <div id='header' className='background-white'>
+      <div id='header' className='background-gray'>
           {/* 헤더 컨테이너 */}
           <div id='header-container'>
                 {/* 헤더 로고 부분 */}
-                <a href='#' className='font-no-decoration'>
+                <Link to='/' className='font-no-decoration'>
                     <span id='logo-title-container'>
                         <img alt='logo' src={logo} id='header-logo-svg'/>
-                        <span id='header-logo-title' className="font-noto-sans-kr color-black font-medium font-18px">Online Planner</span>
+                        <span id='header-logo-title' className="color-black font-medium font-18px">Online Planner</span>
                     </span>
-                </a>
+                </Link>
 
                 {/* 헤더 사용자 이름 부분 */}
                 <div id='header-user-profile'>
@@ -75,14 +76,13 @@ function Header() {
                     <div>
                         {/* 사용자 이름 */}
                         <div id='profile-name' className='font-no-decoration' onClick={() => {userMenuClick()}}>
-                            <span id='user-name' className='font-noto-sans-kr color-black font-medium font-18px'> {userName} </span>
+                            <span id='user-name' className=' color-black font-medium font-18px'> {userName} </span>
                             <img alt='left' src={chevronLeft} id='icon-chevron-left' className='' ref={userNameChevron}/>
                         </div>
                         
                         {/* 사용자 메뉴 */}
                         <div id='profile-menu' className="background-white shadow-default border-radius-10px color-black disactive" ref={userMenu}>
                             <ul className='font-16px font-regular color-black'>
-                                <li id='report' className='color-black'>    <img alt='report' src={flag} className='filter-light-black'/>      <a href='/' onClick={onReport}>신고/건의하기</a></li>
                                 <li id='log-out'className='color-black'>      <img alt='logout' src={logout} className='filter-light-black'/>            <a href='/' onClick={onLogout}>로그아웃</a>     </li>
                             </ul>
                         </div>

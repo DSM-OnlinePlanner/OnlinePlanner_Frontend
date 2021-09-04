@@ -2,22 +2,28 @@ import '../css/summary.css';
 import ComponentStateEnum from '../js/componentState.js';
 import {useEffect, useState} from 'react';
 import TodoData from '../exampleData/TodoData.js';
-import TodoComponent from "../pages/component/TodoComponent.js";
-import Calender from './component/calender';
+import TodoComponent from "../component/TodoComponent/TodoComponent.js";
+import Calender from '../component/calender';
 import apiController from '../js/ApiController.js';
-import {Planner, Time} from '../js/classes/planner.js'
+import {Planner, Time} from '../model/planner.js';
+import TodayRoutine from '../component/TodayRoutine/TodayRoutine';
+import MainCalender from '../component/MainCalender/MainCalender';
+import MainRecode from '../component/MainRecode/MainRecode';
+import Statistics from '../component/Statistics/Statistics';
+import CircleGraph from '../component/CircleGraph/CircleGraph';
 
 function Summary(props){
 
     useEffect(() => {
         props.setcomponentState(ComponentStateEnum.Summary); //요약이 마운트 되면 상태를 요약으로 바꾼다
-        var p = new Planner("hello", 'world', 'A', 'ONE', new Date(2021, 5, 1), new Date(2021, 7, 1), new Time(new Date(2021, 5, 1, 7)), new Time(new Date(2021, 7, 1, 8)), false);
-        console.log(p.toJson());
-        apiController
-        .post('api/planner', p.toJson())
-        .then((response) => {console.log('success');})
-        .catch((error) => {console.log(error); console.log('failed');});
+        // var p = new Planner("hello", 'world', 'A', 'ONE', new Date(2021, 5, 1), new Date(2021, 7, 1), new Time(new Date(2021, 5, 1, 7)), new Time(new Date(2021, 7, 1, 8)), false);
+        // console.log(p.toJson());
+        // apiController
+        // .post('api/planner', p.toJson())
+        // .then((response) => {console.log('success');})
+        // .catch((error) => {console.log(error); console.log('failed');});
     }, []);
+
     const [nowDate, setNowDate] = useState(new Date());
     const [isCalenderOn, setIsCalenderOn] = useState(false);
     const [toDoData, setToDoData] = useState(TodoData);
@@ -31,12 +37,7 @@ function Summary(props){
                     <span className="font-36px color-black font-medium">Summary</span>
                     <span className="font-18px color-black font-regular">요약된 정보를 보여줍니다.</span>
                 </span>
-                <div className='display-flex' id='calender-container'>
-                    <div className='display-flex'>
-                        <span id='titie-day' onClick={() => {setIsCalenderOn(!isCalenderOn);}} className="font-18px color-black font-regular">{nowDate.getFullYear() + '년 ' + (nowDate.getMonth() + 1) + '월 ' + nowDate.getDate() + '일'}</span>
-                        <Calender nowDate={nowDate} setNowDate={setNowDate} isCalenderOn={isCalenderOn}/>
-                    </div>
-                </div>
+                {/* <Calender nowDate={nowDate} setNowDate={setNowDate} isCalenderOn={isCalenderOn}/> */}
             </div>
             <div id='summary-content'>
                 <div id='todo'>
@@ -51,16 +52,8 @@ function Summary(props){
                             {
                                 // 할일 생성하는 부분
                                 toDoData.map((item, index) => {
-                                    if(!item.status){
-                                        return <TodoComponent 
-                                            key={index}
-                                            title={item.title}
-                                            content={item.content} 
-                                            startTime={item.startTime}
-                                            endTime={item.endTime}
-                                            status={item.status}
-                                            importance={item.importance}
-                                            responsibility={item.responsibility}/>
+                                    if(!item.success){
+                                        return <TodoComponent planner={item}/>
                                     }
                                 })
                             }
@@ -72,16 +65,8 @@ function Summary(props){
                             {
                                 // 할일 생성하는 부분
                                 toDoData.map((item, index) => {
-                                    if(item.status){
-                                        return <TodoComponent 
-                                            key={index}
-                                            title={item.title}
-                                            content={item.content} 
-                                            startTime={item.startTime}
-                                            endTime={item.endTime}
-                                            status={item.status}
-                                            importance={item.importance}
-                                            responsibility={item.responsibility}/>
+                                    if(item.success){
+                                        return <TodoComponent planner={item}/>
                                     }
                                 })
                             }
@@ -89,20 +74,20 @@ function Summary(props){
                     </div>
                 </div>
                 <div id='routine'>
-a
+                    <TodayRoutine></TodayRoutine>
                 </div>
                 <div id='calender'>
-a
+                    <MainCalender/>
                 </div>
-                <div id='record'>
-a
+               <div id='record'>
+                    <MainRecode/>
                 </div>
-                <div id='statistics'>
-a
+               <div id='statistics'>
+                    <Statistics/>
                 </div>
-                <div id='statistics-graph'>
-a
-                </div>
+               <div id='statistics-graph'>
+                    <CircleGraph/>
+               </div>
             </div>
         </div>
     );

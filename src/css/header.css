@@ -3,7 +3,6 @@
 #header{
     height: 80px;
     width: 100vw;
-    border-bottom: 1px solid #D1D1D1;
 }
 
 #header-container{
@@ -63,17 +62,15 @@
 /* 프로필 메뉴가 활성화 되있을때 */
 #profile-menu.active{
     visibility: visible;
-    transform: translate(-40%, 0%);
+    transform: translate(10%, 0%);
     opacity: 1;
-    filter: blur(0px);
 }
 
 /* 프로필 메뉴가 활성화 되어있지 않을때 */
 #profile-menu.disactive{
     visibility: hidden;
-    transform: translate(-40%, -15%);
+    transform: translate(10%, -15%);
     opacity: 0;
-    filter: blur(5px);
 }
 
 #profile-menu ul {

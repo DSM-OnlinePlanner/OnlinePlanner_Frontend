@@ -1,76 +1,110 @@
+import { Planner} from "../model/planner";
+
 const TodoData = [
-    {
-        title: '디자인 공부하기',
-        content: '유튜브 동영상 강의로 공부하기',
-        startTime: new Date(2021, 6, 7, 12, 0, 0),
-        endTime: new Date(2021, 6, 7, 13, 0, 0),
-        status: false,
-        importance: 'A',
-        responsibility: 1
-    },
-    {
-        title: '디자인 공부하기',
-        content: '유튜브 동영상 강의로 공부하기',
-        startTime: new Date(2021, 6, 5, 12, 0, 0),
-        endTime: new Date(2021, 6, 7, 13, 0, 0),
-        status: false,
-        importance: 'A',
-        responsibility: 2
-    },
-    {
-        title: '디자인 공부하기',
-        content: '유튜브 동영상 강의로 공부하기',
-        startTime: new Date(2021, 6, 6, 12, 0, 0),
-        endTime: new Date(2021, 6, 7, 13, 0, 0),
-        status: false,
-        importance: 'A',
-        responsibility: 4
-    },
-    {
-        title: '디자인 공부하기',
-        content: '유튜브 동영상 강의로 공부하기',
-        startTime: new Date(2021, 6, 7, 12, 0, 0),
-        endTime: new Date(2021, 6, 7, 13, 0, 0),
-        status: true,
-        importance: 'A',
-        responsibility: 5
-    },
-    {
-        title: '디자인 공부하기',
-        content: '유튜브 동영상 강의로 공부하기',
-        startTime: new Date(2021, 6, 7, 12, 0, 0),
-        endTime: new Date(2021, 6, 7, 13, 0, 0),
-        status: true,
-        importance: 'A',
-        responsibility: 2
-    },
-    {
-        title: '디자인 공부하기',
-        content: '유튜브 동영상 강의로 공부하기',
-        startTime: new Date(2021, 6, 7, 12, 0, 0),
-        endTime: new Date(2021, 6, 7, 13, 0, 0),
-        status: true,
-        importance: 'A',
-        responsibility: 3
-    },
-    {
-        title: '디자인 공부하기',
-        content: '유튜브 동영상 강의로 공부하기',
-        startTime: new Date(2021, 6, 7, 12, 0, 0),
-        endTime: new Date(2021, 6, 7, 13, 0, 0),
-        status: true,
-        importance: 'A',
-        responsibility: 3
-    },
-    {
-        title: '디자인 공부하기',
-        content: '유튜브 동영상 강의로 공부하기',
-        startTime: new Date(2021, 6, 7, 12, 0, 0),
-        endTime: new Date(2021, 6, 7, 13, 0, 0),
-        status: true,
-        importance: 'A',
-        responsibility: 3
-    },
+    new Planner(
+        1, '디자인 공부하기', '유튜브 동영상 강의로 공부하기', 'A', 1,
+        {
+            hour: 12,
+            minute: 0,
+            second: 0,
+            nano: 0
+        },
+        {
+            hour: 13,
+            minute: 0,
+            second: 0,
+            nano: 0
+        },
+        new Date(2021, 6, 7, 12, 0, 0), new Date(2021, 6, 7, 13, 0, 0),
+        true, true, false
+    ),
+    new Planner(
+        2, '디자인 공부하기', '유튜브 동영상 강의로 공부하기', 'A', 2,
+        {
+            hour: 12,
+            minute: 0,
+            second: 0,
+            nano: 0
+        },
+        {
+            hour: 13,
+            minute: 0,
+            second: 0,
+            nano: 0
+        }, new Date(2021, 6, 7, 12, 0, 0), new Date(2021, 6, 7, 13, 0, 0),
+        true, true, false
+    ),
+    new Planner(
+        3, '디자인 공부하기', '유튜브 동영상 강의로 공부하기', 'A', 3,
+        {
+            hour: 12,
+            minute: 0,
+            second: 0,
+            nano: 0
+        },
+        {
+            hour: 13,
+            minute: 0,
+            second: 0,
+            nano: 0
+        },
+        new Date(2021, 6, 7, 12, 0, 0), new Date(2021, 6, 7, 13, 0, 0),
+        true, true, false
+    ),
+    new Planner(
+        4, '디자인 공부하기', '유튜브 동영상 강의로 공부하기', 'A', 4,
+        {
+            hour: 12,
+            minute: 0,
+            second: 0,
+            nano: 0
+        },
+        {
+            hour: 13,
+            minute: 0,
+            second: 0,
+            nano: 0
+        },
+        new Date(2021, 6, 7, 12, 0, 0), new Date(2021, 6, 7, 13, 0, 0),
+        false, true, false
+    ),
+    new Planner(
+        5, '디자인 공부하기', '유튜브 동영상 강의로 공부하기', 'A', 5,
+        {
+            hour: 12,
+            minute: 0,
+            second: 0,
+            nano: 0
+        },
+        {
+            hour: 13,
+            minute: 0,
+            second: 0,
+            nano: 0
+        },
+        new Date(2021, 6, 7, 12, 0, 0), new Date(2021, 6, 7, 13, 0, 0),
+        false, true, false
+    ),
+    new Planner(
+        6, '디자인 공부하기', '유튜브 동영상 강의로 공부하기', 'A', 1,
+        {
+            hour: 12,
+            minute: 0,
+            second: 0,
+            nano: 0
+        },
+        {
+            hour: 13,
+            minute: 0,
+            second: 0,
+            nano: 0
+        },
+        new Date(2021, 6, 7, 12, 0, 0), new Date(2021, 6, 7, 13, 0, 0),
+        false, true, false
+    ),
+
 ];
 
 export default TodoData;
+
+

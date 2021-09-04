@@ -5,6 +5,7 @@
     height: 100vh;
     align-items: center;
     display: flex;
+    user-select: none;
 }
 #sidebar-container{
     width: 100%;

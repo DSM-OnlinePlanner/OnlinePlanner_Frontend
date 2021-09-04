@@ -1,10 +1,9 @@
 #summary-container{
     width: 1280px;
-    min-height: 3000px;
     margin: 0 auto;
 }
 #title-container{
-    margin-top: 120px;
+    margin-top: 40px;
     display: flex;
     justify-content: space-between;
 }
@@ -39,8 +38,9 @@
 #summary-content #todo #todo-outer{
     padding: 16px;
     margin-top: 10px;
-    height: 592px;
+    height: 608px;
     overflow: scroll;
+    box-sizing: border-box;
 }
 
 #summary-content #todo #todo-outer #todo-header {
@@ -48,7 +48,7 @@
 }
 
 #summary-content #todo #todo-outer div #complete-todo{
-    margin: 16px 0px;
+    margin: 28px 0px 16px 0px;
 }
 
 #summary-content #todo #todo-outer div span:last-child{
@@ -86,6 +86,7 @@
         margin: 0 200px;
     }
 }
+
 #titie-day{
     transition: all 0.25s ease-out;
 }
