@@ -111,7 +111,7 @@ const CreateTodoModal = ({ activefunction}) => {
         var d = new Date(date);
         return d.getFullYear() + '-' + (d.getMonth() + 1) + "-" + d.getDate()
     }
-    
+
     const onPost  = () => {
         const w = ["ONE", "TWO", "THREE", "FOUR", "FIVE"];
         const obj = {
@@ -135,9 +135,9 @@ const CreateTodoModal = ({ activefunction}) => {
             },
             pushed: pushed
         }
-
+        console.log(obj);
         apiController
-            .post('/planner', obj)
+            .post('/api/planner', obj)
             .then((response) => {
                 alert('작성되었습니다.');
                 activefunction(false);

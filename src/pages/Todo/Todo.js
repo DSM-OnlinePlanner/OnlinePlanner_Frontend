@@ -28,7 +28,7 @@ function Todo(props){
         }
         return "" + value;
     }
-    
+
     const dateToString = (date) => {
         var d = new Date(date);
         return d.getFullYear() + '-' + get2Place(d.getMonth() + 1) + "-" + get2Place(d.getDate())
@@ -39,7 +39,6 @@ function Todo(props){
             date: dateToString(new Date())
         }
 
-        console.log(dateToString(new Date()));
         props.setcomponentState(ComponentStateEnum.Todo); //할 일이 마운트 되면 상태를 할 일으로 바꾼다
         apiController
             .get('/api/planner/main', {params: param})
