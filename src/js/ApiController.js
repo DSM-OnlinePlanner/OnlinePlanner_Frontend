@@ -21,6 +21,8 @@ instance.interceptors.response.use(
   },
 
   async (error) => {
+    // const { push } = useHistory();
+
     const {
       config,
       response: { status },
@@ -32,6 +34,7 @@ instance.interceptors.response.use(
     if (refreshToken === null) {
       //리프레쉬 토큰이 없으면
       window.location.href = "/login";
+      // push("/login");
       return Promise.reject(error);
     }
 
@@ -84,6 +87,7 @@ instance.interceptors.response.use(
         // 리프레쉬 실패 리프레쉬 토큰 만료 실패
         instance.defaults.headers.common["Authorization"] = null;
         localStorage.removeItem("refreshToken");
+        // push("/login");
         window.location.href = "/login";
         return Promise.reject(error);
       }
