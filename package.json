@@ -46,5 +46,6 @@
   },
   "devDependencies": {
     "webpack": "^4.44.2"
-  }
+  },
+  "proxy": "http://220.90.237.33"
 }
