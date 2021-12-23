@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components";
 import { color } from "../style/color";
 import TextareaAutosize from "react-textarea-autosize";
-import Calender from "../calender";
 
 export const ModalContainer = styled.div`
+  position: absolute;
   top: 0px;
   left: 0px;
   width: 100vw;
@@ -13,7 +13,7 @@ export const ModalContainer = styled.div`
 `;
 
 export const ModalBack = styled.div`
-  position: fixed;
+  position: absolute;
   top: 0px;
   left: 0px;
   width: 100vw;
@@ -205,16 +205,5 @@ export const Button = styled.button`
 
   :active {
     filter: brightness(0.8);
-  }
-`;
-
-export const Cursor = styled.div`
-  cursor: pointer;
-  user-select: none;
-`;
-
-export const CalenderStyled = styled(Calender)`
-  span {
-    margin: 0px;
   }
 `;
