@@ -112,11 +112,7 @@ const Statistics = forwardRef((props, ref) => {
       if (+arr[1] + scale > 0) {
         sig = "+";
       }
-      return +(
-        Math.round(+arr[0] + "e" + sig + (+arr[1] + scale)) +
-        "e-" +
-        scale
-      );
+      return +(Math.round(+arr[0] + "e" + sig + (+arr[1] + scale)) + "e-" + scale);
     }
   };
 
@@ -126,8 +122,7 @@ const Statistics = forwardRef((props, ref) => {
       <div>
         <S.Container>
           <S.Title>
-            할 일 완료 그래프{" "}
-            <S.Subtitle>할 일 완료 개수 변화를 나타냅니다.</S.Subtitle>
+            할 일 완료 그래프 <S.Subtitle>할 일 완료 개수 변화를 나타냅니다.</S.Subtitle>
           </S.Title>
           <S.GraphContainer>
             <S.GraphInner>
@@ -140,20 +135,13 @@ const Statistics = forwardRef((props, ref) => {
                 <S.StickContainer>
                   {(fourTeenDatesSuccessNum || []).map((value, index) => {
                     const v = (value.succeedNum / successMaxNum) * 100;
-                    return (
-                      <S.Stick key={index} height={`${isNaN(v) ? 0 : v}%`} />
-                    );
+                    return <S.Stick key={index} height={`${isNaN(v) ? 0 : v}%`} />;
                   })}
                 </S.StickContainer>
                 <S.StickContainer>
                   {sevenDatesSuccessNum.map((value, index) => {
                     const v = (value.succeedNum / successMaxNum) * 100;
-                    return (
-                      <S.StickSecond
-                        key={index}
-                        height={`${isNaN(v) ? 0 : v}%`}
-                      />
-                    );
+                    return <S.StickSecond key={index} height={`${isNaN(v) ? 0 : v}%`} />;
                   })}
                 </S.StickContainer>
               </S.StickContainers>
@@ -180,20 +168,13 @@ const Statistics = forwardRef((props, ref) => {
                 <S.StickContainer>
                   {fourTeenDatesPlannerNum.map((value, index) => {
                     const v = (value.succeedNum / plannerMaxNum) * 100;
-                    return (
-                      <S.Stick key={index} height={`${isNaN(v) ? 0 : v}%`} />
-                    );
+                    return <S.Stick key={index} height={`${isNaN(v) ? 0 : v}%`} />;
                   })}
                 </S.StickContainer>
                 <S.StickContainer>
                   {sevenDatesPlannerNum.map((value, index) => {
                     const v = (value.succeedNum / plannerMaxNum) * 100;
-                    return (
-                      <S.StickSecond
-                        key={index}
-                        height={`${isNaN(v) ? 0 : v}%`}
-                      />
-                    );
+                    return <S.StickSecond key={index} height={`${isNaN(v) ? 0 : v}%`} />;
                   })}
                 </S.StickContainer>
               </S.StickContainers>
