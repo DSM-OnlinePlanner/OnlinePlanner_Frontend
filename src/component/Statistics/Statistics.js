@@ -139,7 +139,7 @@ const Statistics = forwardRef((props, ref) => {
                   })}
                 </S.StickContainer>
                 <S.StickContainer>
-                  {(fourTeenDatesSuccessNum || []).map((value, index) => {
+                  {sevenDatesSuccessNum.map((value, index) => {
                     const v = (value.succeedNum / successMaxNum) * 100;
                     return <S.StickSecond key={index} height={`${isNaN(v) ? 0 : v}%`} />;
                   })}
@@ -147,7 +147,7 @@ const Statistics = forwardRef((props, ref) => {
               </S.StickContainers>
             </S.GraphInner>
             <S.DayContainer>
-              {(fourTeenDatesSuccessNum || []).map((value, index) => {
+              {fourTeenDatesSuccessNum.map((value, index) => {
                 return <span key={index}>{lPad(value.date)}일</span>;
               })}
             </S.DayContainer>
@@ -166,13 +166,13 @@ const Statistics = forwardRef((props, ref) => {
               </S.NumContainer>
               <S.StickContainers>
                 <S.StickContainer>
-                  {(fourTeenDatesSuccessNum || []).map((value, index) => {
+                  {fourTeenDatesPlannerNum.map((value, index) => {
                     const v = (value.succeedNum / plannerMaxNum) * 100;
                     return <S.Stick key={index} height={`${isNaN(v) ? 0 : v}%`} />;
                   })}
                 </S.StickContainer>
                 <S.StickContainer>
-                  {(fourTeenDatesSuccessNum || []).map((value, index) => {
+                  {sevenDatesPlannerNum.map((value, index) => {
                     const v = (value.succeedNum / plannerMaxNum) * 100;
                     return <S.StickSecond key={index} height={`${isNaN(v) ? 0 : v}%`} />;
                   })}
@@ -180,7 +180,7 @@ const Statistics = forwardRef((props, ref) => {
               </S.StickContainers>
             </S.GraphInner>
             <S.DayContainer>
-              {(fourTeenDatesSuccessNum || []).map((value, index) => {
+              {fourTeenDatesPlannerNum.map((value, index) => {
                 return <span key={index}>{lPad(value.date)}일</span>;
               })}
             </S.DayContainer>
