@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const instance = axios.create();
+const PROXY = window.location.hostname === "localhost" ? "" : "/proxy";
+const instance = axios.create({ baseURL: `${PROXY}` });
 const isRefreshing = false;
 
 instance.interceptors.request.use(
@@ -39,7 +40,7 @@ instance.interceptors.response.use(
     };
 
     try {
-      const response = await axios.put("api/auth", null, {
+      const response = await axios.put(`${PROXY}/api/auth`, null, {
         //헤더에 리프레쉬 토큰을 담음
         headers: header,
       });
@@ -143,7 +144,6 @@ instance.interceptors.response.use(
     //     });
     //   return response;
     // }
-
   }
 );
 
