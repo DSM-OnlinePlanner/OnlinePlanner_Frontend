@@ -138,7 +138,7 @@ const Statistics = forwardRef((props, ref) => {
               </S.NumContainer>
               <S.StickContainers>
                 <S.StickContainer>
-                  {fourTeenDatesSuccessNum.map((value, index) => {
+                  {(fourTeenDatesSuccessNum || []).map((value, index) => {
                     const v = (value.succeedNum / successMaxNum) * 100;
                     return (
                       <S.Stick key={index} height={`${isNaN(v) ? 0 : v}%`} />
